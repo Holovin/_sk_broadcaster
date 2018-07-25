@@ -84,10 +84,8 @@ class Bot {
                         session.userData.userLoaded = true;
 
                         db = new Promise((resolve) => {
-                            this.users.findOne({userId: {$eq: session.message.address.user.id}}, (user) => {
-                                if (user) {
-                                    session.userData.userLogged = true;
-                                }
+                            this.users.findOne({userId: session.message.address.user.id}, (error, user) => {
+                                session.userData.userLogged = !!user;
 
                                 resolve();
                             });

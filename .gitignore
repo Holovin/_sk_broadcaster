@@ -58,6 +58,7 @@ typings/
 .env
 
 # user
+*.json
 .idea/
 config/
 dist/

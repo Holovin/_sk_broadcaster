@@ -109,8 +109,6 @@ class Bot {
                     });
 
                 } else {
-                    console.log(JSON.stringify(session.message.address));
-                    this.bot.send(new Message().address(session.message.address).text('test'));
                     session.endDialog();
                 }
             },
